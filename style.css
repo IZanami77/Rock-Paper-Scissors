@@ -12,4 +12,30 @@ body{
     font-weight: bold;
     background-color: darkgoldenrod;
     text-align: center;
+    margin-bottom: 40px;
+}
+
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content:space-around
+}
+
+.section{
+    display: flex;
+    flex-direction: column;
+}
+
+.section button{
+    padding: 8px;
+    background-color: black;
+    color: #fff;
+    border: solid white 1px;
+    min-width: 200px;
+    min-height: 40px;
+}
+
+.section img{
+    max-width: 200px;
+    max-height: 200px;
 }
