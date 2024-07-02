@@ -4,15 +4,20 @@ body{
     display: flex;
     flex-direction: column;
     background-color: brown;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .header{
     color: #fff;
-    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     background-color: darkgoldenrod;
     text-align: center;
+}
+
+h2{
+    text-align: center;
     margin-bottom: 40px;
+    color: white;
 }
 
 .buttons{
@@ -24,6 +29,7 @@ body{
 .section{
     display: flex;
     flex-direction: column;
+    margin-bottom: 40px;
 }
 
 .section button{

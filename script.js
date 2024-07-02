@@ -20,13 +20,6 @@ function getComputerChoice(){
      
 }
 
-function getHumanChoice(){
-    let humanChoice = prompt("Pick something: rock,paper o scissors").toLowerCase();
-    console.log(`You have picked ${humanChoice}`);
-    
-    return humanChoice;
-   
-}
 
 
 
@@ -34,54 +27,115 @@ function getHumanChoice(){
 function playAround(humanChoice,computerChoice){
     
     if(humanChoice == computerChoice){
-        console.log("It`s a Tie!")
+        game = "It's a tie";
     }
     
     else if(humanChoice == "rock" && computerChoice == "scissors"){
-        console.log("You won! Rock beats scissors");
+        game = "You won! Rock beats scissors";
         human_score += 1;
     }
     else if(humanChoice == 'rock' && computerChoice == 'paper'){
-        console.log("You lose!");
+        game = "You lose! Paper beats Rock";
         computer_score += 1;
     }
     else if(humanChoice == 'scissors' && computerChoice == 'paper'){
-        console.log("You won!");
+        game = "You won! Scissors beats Paper";
         human_score += 1;
     }
     else if(humanChoice == "scissors" && computerChoice == "rock"){
-        console.log("You lose!");
+        game = "You lose! Rock beats scissors";
         computer_score += 1;
     }
     else if(humanChoice == "paper" && computerChoice == "rock"){
-        console.log("You won!");
+        game = "You won! Paper beats rock"
         human_score += 1;
     }
     else if(humanChoice == "paper" && computerChoice == "scissors"){
-        console.log("You lose!");
+        game = "You lose! Scissors beats Paper";
         computer_score += 1;
     }
     else{
-        console.log("Invalid input");
+        game = "Invalid input";
     }
 
 }
 let human_score = 0;
 let computer_score = 0;
 
-function playGame(){
-    for(rounds = 0; rounds < 5; rounds++){
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();
-        playAround(humanSelection,computerSelection);
-    }
-    if(human_score > computer_score){
-        alert("Congrats! you have defeated the matrix "+ `The final score was You: ${human_score} Matrix: ${computer_score}`);
-    }
-    else{
-        alert("Sorry! better luck next time " + `The final score was You: ${human_score} Matrix: ${computer_score}`);
-    }
-}
+
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const scissors = document.querySelector("#scissors");
+
+const father = document.querySelector("body")
+
+rock.addEventListener('click', () =>{
+    var humanChoice = "rock";
+    computerChoice = getComputerChoice();
+    playAround(humanChoice,computerChoice);
+
+    const div = document.createElement("div");
+    const computer = document.createElement("div");
+
+    div.textContent = game;
+    div.style.textAlign = "center";
+    div.style.fontSize = "24px";
+    div.style.color = "white";
+
+    computer.textContent = `The compueter's choice was ${computerChoice}`;
+    computer.style.textAlign = "center";
+    computer.style.fontSize = "24px";
+    computer.style.color = "white";
+
+    father.appendChild(computer);
+    father.appendChild(div);
+
+});
+
+paper.addEventListener('click', () =>{
+    var humanChoice = "paper";
+    computerChoice = getComputerChoice();
+    playAround(humanChoice,computerChoice);
+
+    const div = document.createElement("div");
+    const computer = document.createElement("div");
+
+    div.textContent = game;
+    div.style.textAlign = "center";
+    div.style.fontSize = "24px";
+    div.style.color = "white";
+
+    computer.textContent = `The compueter's choice was ${computerChoice}`;
+    computer.style.textAlign = "center";
+    computer.style.fontSize = "24px";
+    computer.style.color = "white";
+
+    father.appendChild(computer);
+    father.appendChild(div);
+
+});
+
+scissors.addEventListener('click', () =>{
+    var humanChoice = "scissors";
+    computerChoice = getComputerChoice();
+    playAround(humanChoice,computerChoice);
+
+    const div = document.createElement("div");
+    const computer = document.createElement("div");
+
+    div.textContent = game;
+    div.style.textAlign = "center";
+    div.style.fontSize = "24px";
+    div.style.color = "white";
+
+    computer.textContent = `The compueter's choice was ${computerChoice}`;
+    computer.style.textAlign = "center";
+    computer.style.fontSize = "24px";
+    computer.style.color = "white";
+
+    father.appendChild(computer);
+    father.appendChild(div);
+
+});
 
 
-playGame();
